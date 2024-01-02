@@ -1,0 +1,14 @@
+{
+  "name": "rabbitmq",
+  "version": "1.0.0",
+  "description": "Hello Word RabbitMQ",
+  "main": "consumer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maxjn",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.10.3"
+  }
+}
