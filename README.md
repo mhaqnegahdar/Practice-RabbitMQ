@@ -13,21 +13,27 @@ These are some basic projects for practicing and learning **RabbitMQ**.
 ## Features
 
 - **Hello World:**: Send & Recive Messages
-- **Task Queue**: First Simple Socket.io Server
+- **Task Queue**: For Time Consuming Tasks
+    - noAke, durable, persistent : true & false differences
+    - channel.prefetch(1) & channel.acke(msg)
+
 
 ## Installation (locally)
 
 First add your **RabbitMQ** connection link in code.
 
-In each project Install **Packages** with npm
-
-###### Check
+Install **Packages** with npm in roote
 
 ```shell
 npm install
 
-node publisher
-node reciever
+```
+###### Running Each Project
+
+```shell
+node publisher.js task...
+
+node reciever.js
 ```
 ## If Using Docker:
 ```shell
