@@ -1,6 +1,6 @@
 # RabbitMQ Practice
 
-These are some basic projects for practicing and learning **RabbitMQ**. 
+These are some basic projects for practicing and learning **RabbitMQ** base on their own [doc](https://www.rabbitmq.com/getstarted.html). 
 
 
 
@@ -20,6 +20,9 @@ These are some basic projects for practicing and learning **RabbitMQ**.
 
 - **Pub/Sub (Fanout)**: Beoadcast Messages
     - exclusive: true : remove queue when reciever is done
+
+- **Routing (Direct)**: Direct Messages
+    - Sending Messages With **Routing Keys**
 
 
 ## Installation (locally)
