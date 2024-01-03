@@ -13,9 +13,13 @@ These are some basic projects for practicing and learning **RabbitMQ**.
 ## Features
 
 - **Hello World:**: Send & Recive Messages
+
 - **Task Queue**: For Time Consuming Tasks
     - noAke, durable, persistent : true & false differences
     - channel.prefetch(1) & channel.acke(msg)
+
+- **Pub/Sub (Fanout)**: Beoadcast Messages
+    - exclusive: true : remove queue when reciever is done
 
 
 ## Installation (locally)

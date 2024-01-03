@@ -24,7 +24,7 @@ amqp.connect("amqp://localhost", async (err0, connection) => {
       (msg) => {
         var secs = msg.content.toString().split(".").length - 1;
         setTimeout(function () {
-          console.log(" [x] Done",secs);
+          console.log(" [x] Done", secs);
           channel.ack(msg);
         }, secs * 1000);
       },
