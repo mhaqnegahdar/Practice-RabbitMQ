@@ -24,6 +24,9 @@ These are some basic projects for practicing and learning **RabbitMQ** base on t
 - **Routing (Direct)**: Direct Messages
     - Sending Messages With **Routing Keys**
 
+- **Routing (Topic)**: Filtering Messages
+    - Sending Messages With **Routing Keys** : "us.main.*" of "#.error"
+
 
 ## Installation (locally)
 
