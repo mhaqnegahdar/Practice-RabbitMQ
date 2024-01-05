@@ -7,7 +7,7 @@ These are some basic projects for practicing and learning **RabbitMQ** base on t
 ## Technologies
 
 - Node.js
-- **Packages:** amqplib
+- **Packages:** amqplib, uuid
 
 
 ## Features
@@ -27,12 +27,12 @@ These are some basic projects for practicing and learning **RabbitMQ** base on t
 - **Routing (Topic)**: Filtering Messages
     - Sending Messages With **Routing Keys** : "us.main.*" of "#.error"
 
-
 - **Routing (Headers)**: Filtering Messages
     - Sending Messages With **Headers** : 
         - Emitter: {headers:{*set headers*}}
         - Consumer: {*set headers*}
 
+- **RPC Queue**: Sending a Task & Recieving Response 
 
 ## Installation (locally)
 
