@@ -28,6 +28,12 @@ These are some basic projects for practicing and learning **RabbitMQ** base on t
     - Sending Messages With **Routing Keys** : "us.main.*" of "#.error"
 
 
+- **Routing (Headers)**: Filtering Messages
+    - Sending Messages With **Headers** : 
+        - Emitter: {headers:{*set headers*}}
+        - Consumer: {*set headers*}
+
+
 ## Installation (locally)
 
 First add your **RabbitMQ** connection link in code.

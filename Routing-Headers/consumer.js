@@ -1,12 +1,17 @@
 const amqp = require("amqplib/callback_api");
 
-const routingKeys = process.argv.slice(2)
+const header = process.argv.slice(2)
+const xMatch = header[0] || 'any'
+const account = header[1] || 'new'
+const method = header[2] || 'facebook'
 
 
-const queueName = routingKeys.reduce((accumulator, currentElement) => {
+const queueName = header.reduce((accumulator, currentElement) => {
 
   return `${accumulator}${!accumulator?'':'-'}${currentElement}`;// Create queueName from routing keys
 }, '');
+
+
 
 
 amqp.connect("amqp://localhost", async (err0, connection) => {
@@ -16,19 +21,17 @@ amqp.connect("amqp://localhost", async (err0, connection) => {
   connection.createChannel(async(err1, channel) => {
     if (err1) throw err1;
 
-    let exchangeName = "topic_logs";
+    let exchangeName = "headers_logs";
 
     // Assert Exchange
-    channel.assertExchange(exchangeName, "topic", { durable: false });
+    channel.assertExchange(exchangeName, "headers", { durable: false });
 
     // Assert Queue
     channel.assertQueue(queueName, { durable: false ,exclusive: true});
 
-    // Bind Queues to routing keys
-    routingKeys.forEach((routingKey)=>{
-
-      channel.bindQueue(queueName, exchangeName, routingKey);
-    })
+    // Bind Queue to header
+    channel.bindQueue(queueName, exchangeName, '',{"x-match":xMatch,"account":account,"method":method});
+ 
 
 
     console.log(
